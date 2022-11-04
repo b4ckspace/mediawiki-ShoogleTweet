@@ -45,7 +45,7 @@ class ShoogleTweet {
 
     public function hookShoogleTweet($screen_name, $argv, $parser) {
 
-        $parser->disableCache();
+        $parser->getOutput()->updateCacheExpiry(0);
 
         // Merge user specific settings with own defaults
         $this->settings = array_merge($this->settings, $argv);
